@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Homework Week 2</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://kit.fontawesome.com/4454b5eff7.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="card text-center">
+        <div class="card-body">
+          <h1 class="card-title">What's the weather like in...</h1>
+         <form id="search-form">
+            <input type="Search" id="search-text" class="search" placeholder="Type your city" autocomplete="off" autofocus="on" />
+            <input type="Submit" class="search-button" value="Search"  />
+          </form>
+          <button type="button" id="location-button" class="btn btn-secondary">Current location</button>
+          <h2 id="searched-city">Barcelona</h2>
+          <p id="current-date"></p>
+          <p id="current-time"></p>
+ <div class="row" id="current-weather">
+   <div class="col-2"></div>
+    <div class="col-4">
+      <img src="icons/sun.png" class="current-weather-icon" alt="Sunny" >
+</div>
+    <div class="col-3">
+      <h3> <span id="currentTemperature">19</span>
+        <span class=units>ºC</span></h3>
+      <div class="temperature-data">
+      Sunny
+      <br/>
+      Wind: 6km/H
+      <br/>
+    Humidity: 12%
+    </div>
+    </div>
+    <div class="col-3"></div>
+    </div>
+ <hr />  
+    <h4>Forecast</h4>
+     <div class="row" id="forecast">
+    <div class="col">
+     <p> Monday</p>
+       <img src="icons/clouds.png" class="weather-icon" alt="Cloudy" >
+
+      <div class="temp-weekday">20ºC</div>
+      
+    </div>
+    <div class="col">
+       <p>Tuesday</p>
+       <img src="icons/clouds.png" class="weather-icon" alt="Cloudy" >
+      <div class="temp-weekday">23ºC</div>
+    </div>
+    <div class="col">
+      <p>Wednesday</p>
+       <img src="icons/rain.png" class="weather-icon" alt="Rainy" >
+      <div class="temp-weekday">19ºC</div>
+    </div>
+    <div class="col">
+     <p>Thursday</p>
+       <img src="icons/rain.png" class="weather-icon" alt="Rainy" >
+      <div class="temp-weekday">21ºC</div>
+    </div>
+    <div class="col">
+     <p>Friday</p>
+       <img src="icons/clouds.png" class="weather-icon" alt="Cloudy" >
+      <div class="temp-weekday">19ºC</div>
+    </div>
+  </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+
+  </body>
+</html>
