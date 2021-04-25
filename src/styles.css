@@ -1,3 +1,10 @@
+body {
+  max-width: 800px;
+  margin: 10px auto;
+  height: 850px;
+  margin-top: 50px;
+}
+
 h1,
 h2,
 h3,
@@ -31,10 +38,15 @@ hr {
   margin: 50px 30px 35px;
 }
 
-.container {
-  width: 700px;
-  height: 850px;
-  margin-top: 50px;
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .card-title {
