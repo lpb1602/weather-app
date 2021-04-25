@@ -57,18 +57,10 @@ a {
 }
 
 .search {
-  padding: 5px 60px;
+  padding: 5px 60px 5px 10px;
   border-radius: 5px;
   border-color: #ededed;
-  padding-left: 10px;
-}
-
-.search-button {
-  background-color: #4a8ce2;
-  color: #fff;
-  font-size: 21px;
-  border-radius: 5px;
-  border: none;
+  margin: 0;
 }
 
 .btn-secondary {

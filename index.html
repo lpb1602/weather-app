@@ -23,8 +23,18 @@
         <div class="card-body">
           <h1 class="card-title">What's the weather like in...</h1>
          <form id="search-form">
-            <input type="Search" id="search-text" class="search" placeholder="Type your city" autocomplete="off" autofocus="on" />
-            <input type="Submit" class="search-button" value="Search"  />
+           <div class="row">
+              <div class="col-2">
+            </div>
+             <div class="col-6">
+            <input type="Search" id="search-text" class="form-control" class="search" placeholder="Type your city" autocomplete="off" autofocus="on" />
+            </div>
+            <div class="col-2">
+            <input type="Submit" class="btn btn-primary" value="Search"  />
+         </div>
+         <div class="col-2">
+            </div>
+          </div>
           </form>
           <button type="button" id="location-button" class="btn btn-secondary">Current location</button>
           <h2 id="searched-city">Barcelona</h2>
