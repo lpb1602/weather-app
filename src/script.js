@@ -45,22 +45,23 @@ updatedTime.innerHTML = formatTime(currentTime);
  
 // Weather (Current Temp)
 
-function searchCity(event){
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-text");
+function searchCity(city){
   let apiKey = "cf62258a4240a831b95a688c2d009d72";
   let units = "metric";
-  let city = searchInput.value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
-  let h2 = document.querySelector("#searched-city");
-  h2.innerHTML = `${city}`;
-
 axios.get(apiUrl).then(showTemperature);
 }
 
+function handleSubmit(event){
+event.preventDefault();
+let cityElement = document.querySelector("#search-text");
+searchCity(cityElement.value);
+}
+
+searchCity("Barcelona");
+
 let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener ("submit", searchCity)
+searchForm.addEventListener ("submit", handleSubmit)
 
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
@@ -91,7 +92,6 @@ function retrievePosition(position) {
 
 function getCurrentPosition(){
 navigator.geolocation.getCurrentPosition(retrievePosition)
-
 }
 
 let locationButton = document.querySelector("#location-button");
