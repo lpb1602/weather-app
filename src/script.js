@@ -66,8 +66,16 @@ function showTemperature(response) {
   let city = response.data.name;
   let currentTemp = document.querySelector("#currentTemperature");
   currentTemp.innerHTML = temperature;
-    let h2 = document.querySelector("#searched-city");
+  let h2 = document.querySelector("#searched-city");
   h2.innerHTML = `${city}`;
+  let weatherDescription = document.querySelector("#description");
+  weatherDescription.innerHTML = response.data.weather[0].description;
+  let currentHumidity = document.querySelector("#humidity");
+  currentHumidity.innerHTML = response.data.main.humidity;
+  let currentWindSpeed = document.querySelector("#wind");
+  currentWindSpeed.innerHTML = Math.round(response.data.wind.speed);
+
+
 }
 
 function retrievePosition(position) {

@@ -87,6 +87,7 @@ a {
 
 .temperature-data {
   text-align: right;
+  text-transform: capitalize;
 }
 
 #forecast p {
