@@ -20,7 +20,7 @@ h2 {
 
 #currentTemperature {
   text-align: left;
-  font-size: 90px;
+  font-size: 85px;
   padding-top: 30px;
   margin-bottom: 0px;
 }
@@ -107,7 +107,7 @@ a {
 .units {
   font-size: 18px;
   position: relative;
-  top: -105px;
+  top: -100px;
   right: -54px;
 }
 
