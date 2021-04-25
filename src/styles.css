@@ -75,7 +75,7 @@ a {
   margin-top: 20px;
 }
 
-.current-weather-icon {
+#current-weather-icon {
   width: 150px;
   height: 150px;
   margin-top: 30px;
@@ -106,7 +106,7 @@ a {
 }
 
 .units {
-  font-size: 17px;
+  font-size: 18px;
   position: relative;
   top: -40px;
 }
