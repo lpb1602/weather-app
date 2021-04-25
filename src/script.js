@@ -34,7 +34,8 @@ updatedDate.innerHTML = formatDate(currentTime);
 function formatTime(time) {
 let currentHour = time.getHours();
 let currentMinutes = time.getMinutes();
-let formattedTime = `${currentHour}:${currentMinutes}`;
+let mins = ('0'+currentMinutes).slice(-2);
+let formattedTime = `${currentHour}:${mins}`;
 return formattedTime;
 }
 
