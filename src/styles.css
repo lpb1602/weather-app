@@ -18,6 +18,13 @@ h2 {
   text-transform: capitalize;
 }
 
+#currentTemperature {
+  text-align: left;
+  font-size: 90px;
+  padding-top: 30px;
+  margin-bottom: 0px;
+}
+
 h4 {
   font-size: 25px;
   margin-bottom: 15px;
@@ -72,14 +79,14 @@ a {
   height: 150px;
   margin-top: 30px;
 }
-
-#currentTemperature {
-  font-size: 75px;
+.current-data {
+  height: 160px;
 }
-
 .temperature-data {
+  font-size: 19px;
   text-align: right;
   text-transform: capitalize;
+  margin-top: 0px;
 }
 
 #forecast p {
@@ -100,5 +107,15 @@ a {
 .units {
   font-size: 18px;
   position: relative;
-  top: -40px;
+  top: -105px;
+  right: -54px;
+}
+
+.active {
+  color: black;
+  cursor: default;
+}
+
+.active:hover {
+  color: black;
 }

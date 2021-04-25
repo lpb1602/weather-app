@@ -52,19 +52,17 @@ function searchCity(city){
 axios.get(apiUrl).then(showTemperature);
 }
 
+searchCity("Barcelona");
+
 function handleSubmit(event){
 event.preventDefault();
 let cityElement = document.querySelector("#search-text");
 searchCity(cityElement.value);
 }
 
-searchCity("Barcelona");
-
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener ("submit", handleSubmit)
-
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let temperature = Math.round(celsiusTemperature);
   let city = response.data.name;
   let currentTemp = document.querySelector("#currentTemperature");
   currentTemp.innerHTML = temperature;
@@ -91,9 +89,42 @@ function retrievePosition(position) {
 }
 
 function getCurrentPosition(){
-navigator.geolocation.getCurrentPosition(retrievePosition)
+navigator.geolocation.getCurrentPosition(retrievePosition);
 }
 
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getCurrentPosition);
+
+// Unit conversion
+
+function showFahrenheitTemp(event){
+event.preventDefault();
+let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+let tempElement = document.querySelector("#currentTemperature");
+tempElement.innerHTML = (Math.round(fahrenheitTemp));
+celsiusLink.classList.remove("active");
+fahrenheitLink.classList.add("active");
+
+}
+
+function showCelsiusTemp(event){
+event.preventDefault();
+let tempElement = document.querySelector("#currentTemperature");
+tempElement.innerHTML = Math.round(celsiusTemperature);
+celsiusLink.classList.add("active");
+fahrenheitLink.classList.remove("active");
+
+}
+
+
+let celsiusTemperature = null;
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener ("submit", handleSubmit)
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
 
