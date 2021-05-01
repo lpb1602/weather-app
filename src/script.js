@@ -61,7 +61,11 @@ function displayForecast(){
   forecastElement.innerHTML = forecastHTML;
 }
 
-
+function getForecast(coordinates) {
+  let apiKey = "cf62258a4240a831b95a688c2d009d72";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 // Weather (Current Temp)
 
 function searchCity(city){
@@ -96,6 +100,8 @@ function showTemperature(response) {
   let weatherIcon = document.querySelector("#current-weather-icon");
   weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   weatherIcon.setAttribute("alt", "response.data.weather[0].description");
+
+getForecast(response.data.coord);
 }
 
 function retrievePosition(position) {
