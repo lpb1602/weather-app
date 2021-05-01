@@ -42,7 +42,26 @@ return formattedTime;
 let updatedTime = document.querySelector("#current-time");
 updatedTime.innerHTML = formatTime(currentTime);
 
- 
+// Forecast
+
+function displayForecast(){
+  let forecastElement = document.querySelector("#weather-forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function(day){
+    forecastHTML = forecastHTML + `   <div class="col-2" id="forecast">Monday
+       <img src="icons/clouds.png" class="weather-icon" alt="Cloudy" >
+      <div class="forecast-temp">20ºC</div>
+      </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+
 // Weather (Current Temp)
 
 function searchCity(city){
@@ -128,3 +147,4 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
+displayForecast();
