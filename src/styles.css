@@ -18,13 +18,6 @@ h2 {
   text-transform: capitalize;
 }
 
-#currentTemperature {
-  text-align: left;
-  font-size: 85px;
-  padding-top: 30px;
-  margin-bottom: 0px;
-}
-
 h4 {
   font-size: 25px;
   margin-bottom: 15px;
@@ -82,6 +75,15 @@ a {
 .current-data {
   height: 160px;
 }
+
+#current-temperature {
+  position: relative;
+  right: -40px;
+  text-align: left;
+  font-size: 85px;
+  padding-top: 30px;
+  margin-bottom: 0px;
+}
 .temperature-data {
   font-size: 19px;
   text-align: right;
@@ -109,17 +111,8 @@ a {
 }
 
 .units {
-  font-size: 18px;
+  font-size: 25px;
   position: relative;
   top: -100px;
-  right: -54px;
-}
-
-.active {
-  color: black;
-  cursor: default;
-}
-
-.active:hover {
-  color: black;
+  right: -70px;
 }

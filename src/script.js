@@ -97,7 +97,7 @@ function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   let temperature = Math.round(celsiusTemperature);
   let city = response.data.name;
-  let currentTemp = document.querySelector("#currentTemperature");
+  let currentTemp = document.querySelector("#current-temperature");
   currentTemp.innerHTML = temperature;
   let h2 = document.querySelector("#searched-city");
   h2.innerHTML = `${city}`;
@@ -130,36 +130,9 @@ navigator.geolocation.getCurrentPosition(retrievePosition);
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getCurrentPosition);
 
-// Unit conversion
-
-function showFahrenheitTemp(event){
-event.preventDefault();
-let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-let tempElement = document.querySelector("#currentTemperature");
-tempElement.innerHTML = (Math.round(fahrenheitTemp));
-celsiusLink.classList.remove("active");
-fahrenheitLink.classList.add("active");
-
-}
-
-function showCelsiusTemp(event){
-event.preventDefault();
-let tempElement = document.querySelector("#currentTemperature");
-tempElement.innerHTML = Math.round(celsiusTemperature);
-celsiusLink.classList.add("active");
-fahrenheitLink.classList.remove("active");
-
-}
-
 
 let celsiusTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener ("submit", handleSubmit)
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemp);
 
